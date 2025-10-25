@@ -57,7 +57,9 @@ public class DocumentTypesController : ControllerBase
 
         if (!_accessEvaluator.HasAccess(User, projectId, projectOrgId))
         {
-            return StatusCode(StatusCodes.Status403Forbidden, CreateError("forbidden", "You don't have access to this project."));
+            return StatusCode(
+                StatusCodes.Status403Forbidden,
+                CreateError("forbidden", "You don't have access to this project."));
         }
 
         using (LogContext.PushProperty("UserId", User.FindFirst("sub")?.Value ?? "unknown"))

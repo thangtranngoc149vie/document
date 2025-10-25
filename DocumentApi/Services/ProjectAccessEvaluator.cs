@@ -75,7 +75,9 @@ public sealed class ProjectAccessEvaluator : IProjectAccessEvaluator
             yield break;
         }
 
-        var segments = raw.Split(new[] { ',', ';', ' ' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        var segments = raw.Split(
+            new[] { ',', ';', ' ' },
+            StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
         foreach (var segment in segments)
         {
             yield return segment;
