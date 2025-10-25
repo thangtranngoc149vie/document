@@ -1,0 +1,8 @@
+@DocumentApi_HostAddress = http://localhost:5048
+@projectId = 00000000-0000-0000-0000-000000000000
+
+GET {{DocumentApi_HostAddress}}/api/v1/projects/{{projectId}}/document-types?activeOnly=true&limit=100
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
