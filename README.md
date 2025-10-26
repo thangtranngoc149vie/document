@@ -7,6 +7,7 @@ This repository hosts a .NET 8 Web API that exposes the **Get Document Types for
 - **Endpoint:** `GET /api/v1/projects/{projectId}/document-types` with optional `q`, `activeOnly`, and `limit` parameters.
 - **Security:** Serilog logging, JWT bearer authentication, and RBAC + ABAC enforcement through `ProjectAccessEvaluator`.
 - **Data access:** PostgreSQL connection managed via `NpgsqlConnection` and the `DocumentTypesRepository`, which executes the SQL defined in the specification to return paginated document type listings.
+- **Service layer:** `DocumentTypesService` centralises project lookups, access evaluation, sanitisation, and repository aggregation so controllers remain thin HTTP adapters.
 - **Tooling:** Swagger UI for local exploration, strongly typed logging, and environment-based configuration in `appsettings*.json`.
 
 ## Getting Started

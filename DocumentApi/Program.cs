@@ -80,6 +80,8 @@ builder.Services.AddScoped(sp =>
 });
 
 builder.Services.AddScoped<IDocumentTypesRepository, DocumentTypesRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+builder.Services.AddScoped<IDocumentTypesService, DocumentTypesService>();
 builder.Services.AddSingleton<IProjectAccessEvaluator, ProjectAccessEvaluator>();
 
 var app = builder.Build();
